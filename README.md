@@ -1,5 +1,5 @@
 # log.c
-A simple logging library implemented in C99
+This is a fork of [rxi/log.c](https://github.com/rxi/log.c), adjusted for my uses.<br>
 
 ![screenshot](https://cloud.githubusercontent.com/assets/3920290/23831970/a2415e96-0723-11e7-9886-f8f5d2de60fe.png)
 
@@ -47,23 +47,15 @@ All logs below the given level will be ignored. By default the level is
 A file pointer where the log should be written can be provided to the library by
 using the `log_set_fp()` function. The data written to the file output is
 of the following format:
-
 ```
 2047-03-11 20:18:26 TRACE src/main.c:11: Hello world
 ```
-
 
 #### log_set_lock(log_LockFn fn)
 If the log will be written to from multiple threads a lock function can be set.
 The function is passed a `udata` value (set by `log_set_udata()`) and the
 integer `1` if the lock should be acquired or `0` if the lock should be
 released.
-
-
-#### LOG_USE_COLOR
-If the library is compiled with `-DLOG_USE_COLOR` ANSI color escape codes will
-be used when printing.
-
 
 ## License
 This library is free software; you can redistribute it and/or modify it under
