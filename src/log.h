@@ -10,8 +10,9 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-
-#define LOG_VERSION "0.1.0"
+#ifdef _WIN32
+#include <Windows.h>
+#endif
 
 typedef void (*log_LockFn)(void *udata, int lock);
 
